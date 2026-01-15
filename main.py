@@ -1,14 +1,14 @@
 import os
 from flask import Flask, request, jsonify
 import pandas as pd
-import joblib # ή pickle αν χρησιμοποιείτε αυτό για το μοντέλο σας
+import joblib  # ή pickle αν χρησιμοποιείτε αυτό για το μοντέλο σας
 
 app = Flask(__name__)
 
 # Εδώ θα φορτώσετε το εκπαιδευμένο μοντέλο σας
-# Αν το μοντέλο παράγεται από το train_evaluate_monthly.py, 
+# Αν το μοντέλο παράγεται από το train_evaluate_monthly.py,
 # βεβαιωθείτε ότι το έχετε κάνει save ως .pkl
-MODEL_PATH = "model.pkl" 
+MODEL_PATH = "model.pkl"
 
 @app.route('/predict', methods=['POST'])
 def predict():

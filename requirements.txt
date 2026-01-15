@@ -76,8 +76,6 @@ google-cloud-logging>=3.3.0
 google-cloud-pubsub>=2.15.0
 google-cloud-datastore>=2.15.0
 google-cloud-bigtable>=2.10.0
-apache-beam>=2.42.0
 protobuf>=4.22.0
 tensorflow-data-validation>=1.10.0
 joblib>=1.2.0
-
