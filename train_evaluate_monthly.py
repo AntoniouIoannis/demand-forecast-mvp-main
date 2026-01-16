@@ -1,36 +1,28 @@
 #!/usr/bin/env python3
 """
-
 Train a demand model and produce MONTHLY metrics (timerange=month
 on the test set.
-
 Inputs: the *_with_roll.csv outputs from preprocess_sales.py
 Outputs:
   - predictions_test.csv
   - metrics_by_month.csv
   - metrics_overall.json
 """
-
 from __future__ import annotations
-
 import argparse
 import json
 import math
 from pathlib import Path
-
 import numpy as np
 import pandas as pd
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
-
 def rmse(y_true, y_hat) -> float:
     return float(math.sqrt(mean_squared_error(y_true, y_hat)))
-
 
 def smape(y_true, y_hat, eps=1e-9) -> float:
     denom = np.maximum((np.abs(y_true) + np.abs(y_hat)) / 2.0, eps)
     return float(np.mean(np.abs(y_hat - y_true) / denom))
-
 
 def wape(y_true, y_hat, eps=1e-9) -> float:
     denom = max(float(np.sum(np.abs(y_true))), eps)

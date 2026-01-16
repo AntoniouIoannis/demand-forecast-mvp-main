@@ -18,8 +18,7 @@ def predict():
         df = pd.DataFrame(data)
         
         # Φόρτωση μοντέλου (καλό είναι να γίνεται εκτός της predict 
-        # για ταχύτητα, 
-        # αλλά για αρχή το βάζουμε εδώ)
+        # για ταχύτητα, αλλά για αρχή το βάζουμε εδώ)
         model = joblib.load(MODEL_PATH)
         
         # Πραγματοποίηση πρόβλεψης
@@ -36,5 +35,3 @@ if __name__ == "__main__":
     # ΠΡΟΣΟΧΗ: Το Cloud Run απαιτεί τη θύρα από τη μεταβλητή περιβάλλοντος PORT
     port = int(os.environ.get("PORT", 8080))
     app.run(host='0.0.0.0', port=port)
-
-    

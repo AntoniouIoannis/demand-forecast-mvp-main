@@ -1,5 +1,9 @@
 {
     "powerquery.client.additionalSymbolsDirectories": [
         "c:/Users/iantoniou/Python_projs/demand-forecast-mvp-main/.vscode/excel-pq-symbols"
+    ],
+    "cSpell.words": [
+        "colname",
+        "ddof"
     ]
 }
